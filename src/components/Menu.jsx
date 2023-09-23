@@ -5,9 +5,12 @@ import styles from "./styles/Order.module.css";
 function Menu({ menuItems, order, setOrder }) {
   const addItemToOrder = (item) => {
     const newOrder = [...order];
+    // eslint-disable-next-line
+    console.log(newOrder);
     const itemInOrder = newOrder.find(
       (orderItem) => orderItem.item.id === item.id
     );
+
     if (itemInOrder) {
       itemInOrder.quantity += 1;
     } else {
